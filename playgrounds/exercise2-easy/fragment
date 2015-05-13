@@ -1,0 +1,9 @@
+#version 330 core
+
+uniform float offset;
+
+out vec4 outputColor;
+
+void main() {
+	outputColor = vec4(sin(gl_FragCoord.y/32.0+gl_FragCoord.x/64.0+2*offset),sin(gl_FragCoord.x/64+2*sin(offset))*sin(gl_FragCoord.y/64+2*cos(offset)),0,1.0);
+}
